@@ -228,6 +228,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4017812889266454374, guid: e52df622ac990004b9d5d7186cabf811, type: 3}
     - target: {fileID: 4821391895378830938, guid: d9ab713305635c047934046ac315e08d, type: 3}
+      propertyPath: _shootTriple
+      value: 
+      objectReference: {fileID: 1183842519107219023, guid: 2465f57012e42514798270038ef911c6, type: 3}
+    - target: {fileID: 4821391895378830938, guid: d9ab713305635c047934046ac315e08d, type: 3}
       propertyPath: _prefabPlayer
       value: 
       objectReference: {fileID: 1216312044}

@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private GameObject _shootSingle;
+    [SerializeField]
+    private GameObject _shootTriple;
 
     // Start is called before the first frame update
     void Start()
@@ -27,10 +29,10 @@ public class Player : MonoBehaviour
         LimitsPlayer();
 
         //Shoot single
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Instantiate(_shootSingle, transform.position + new Vector3(0, 0, 0), Quaternion.identity);
-        }
+        ShootSingle();
+
+        //Shoot triple
+        ShootTriple();
         
     }
 
@@ -64,6 +66,22 @@ public class Player : MonoBehaviour
         else if (transform.position.y < -4.3f)
         {
             transform.position = new Vector3(transform.position.x, 4.3f, 0);
+        }
+    }
+
+    private void ShootSingle()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(_shootSingle, transform.position + new Vector3(0, 0, 0), Quaternion.identity);
+        }
+    }
+
+    private void ShootTriple()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Instantiate(_shootTriple, transform.position, Quaternion.identity);
         }
     }
 }
