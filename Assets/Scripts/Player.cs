@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public int speed = 5;
 
     [SerializeField]
-    private GameObject _prefabPlayer;
+    private GameObject _shootSingle;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +20,18 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Movement Player
         MovementPlayer();
         
+        //Limits horizontal and vertical
         LimitsPlayer();
+
+        //Shoot single
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(_shootSingle, transform.position + new Vector3(0, 0, 0), Quaternion.identity);
+        }
+        
     }
 
     private void MovementPlayer()
